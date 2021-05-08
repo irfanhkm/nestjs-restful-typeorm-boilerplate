@@ -12,12 +12,8 @@ const config = [
         database: process.env.DB_DATABASE_1 || "orm_test_1",
         synchronize: true,
         logging: false,
-        entities: ["src/entities/db1/**/*.ts"],
+        entities: ["src/modules/**/*.entity{.ts,.js}"],
         migrations: ["src/migrations/db1/**/*.ts"],
-        cli: {
-            entitiesDir: "src/entities/db1",
-            migrationsDir: "src/migrations/db1",
-        },
     },
     {
         name: "database_2",

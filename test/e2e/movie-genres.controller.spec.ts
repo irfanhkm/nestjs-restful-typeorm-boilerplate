@@ -1,6 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
-import { MovieGenresController } from "../../src/movie-genres/movie-genres.controller";
-import { MovieGenresService } from "../../src/movie-genres/movie-genres.service";
+import { MovieGenresController } from "../../src/modules/movie-genres/movie-genres.controller";
+import { MovieGenresService } from "../../src/modules/movie-genres/movie-genres.service";
 
 describe("MovieGenresController", () => {
     let controller: MovieGenresController;
