@@ -6,8 +6,9 @@ import {
     OneToMany,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
-    BaseEntity, Like,
-} from 'typeorm';
+    BaseEntity,
+    Like,
+} from "typeorm";
 import { Movie } from "../../movies/movie.entity";
 import { declareScope } from "typeorm-scopes";
 
