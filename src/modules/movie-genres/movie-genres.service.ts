@@ -1,7 +1,9 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Query } from "@nestjs/common";
 import { CreateMovieGenreDto } from "./dto/create-movie-genre.dto";
 import { UpdateMovieGenreDto } from "./dto/update-movie-genre.dto";
-import { MovieGenresRepository } from "./movie-genres.repository";
+import { MovieGenresRepository } from "../../models/movie-genres/repositories/movie-genres.repository";
+import { IndexMovieGenreDto } from "./dto";
+import { MovieGenre } from "../../models/movie-genres/entities/movie-genres.entity";
 
 @Injectable()
 export class MovieGenresService {
@@ -10,15 +12,12 @@ export class MovieGenresService {
         return "This action adds a new movieGenre";
     }
 
-    findAll() {
-        const queryBuilder = this.movieGenresRepository.createQueryBuilder(
-            "movie_genre",
-        );
-        return queryBuilder.getMany();
+    findAll(query: IndexMovieGenreDto) {
+        return MovieGenre.findByName(query.search).find();
     }
 
     findOne(id: number) {
-        return this.movieGenresRepository.findOne(id);
+        return this.movieGenresRepository.findById(id);
     }
 
     update(id: number, updateMovieGenreDto: UpdateMovieGenreDto) {

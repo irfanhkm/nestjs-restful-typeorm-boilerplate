@@ -2,8 +2,8 @@ import { Module } from "@nestjs/common";
 import { MoviesModule } from "./modules/movies/movies.module";
 import { MovieGenresModule } from "./modules/movie-genres/movie-genres.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { MovieGenre } from "./entities/db1/movie-genre.entity";
-import { Movie } from "./entities/db1/movie.entity";
+import { MovieGenre } from "./models/movie-genres/entities/movie-genres.entity";
+import { Movie } from "./models/movies/movie.entity";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config();
